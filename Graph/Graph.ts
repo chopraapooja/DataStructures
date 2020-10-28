@@ -5,7 +5,7 @@ class Graph {
   adjacencyList: AdjacencyList
 
   constructor() {
-    this.adjacencyList = new Map<any, any>();
+    this.adjacencyList = new Map<Vertex, Vertex[]>();
   }
 
   addVertex(vertex: Vertex) {
@@ -39,7 +39,7 @@ class Graph {
   }
 
   // recursion
-  DFS(searchVertex: Vertex, start: Vertex) {
+  DFS(searchVertex: Vertex, start: Vertex): Vertex[] {
     const visited = new Map<Vertex, boolean>();
     const graph = this.adjacencyList;
 
